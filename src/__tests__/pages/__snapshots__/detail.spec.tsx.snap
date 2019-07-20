@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail Page Should Render detail page without crash 1`] = `
+Array [
+  <div
+    className="Wrapper WrapperNoFilter"
+  >
+    <div
+      className="container"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <h1>
+          Pokédex
+        </h1>
+      </a>
+    </div>
+  </div>,
+  <footer
+    className="Wrapper"
+  >
+    <div
+      className="container"
+    >
+      <h2>
+        Pokédex - A Pokémon Encyclopedia
+      </h2>
+      <p
+        className="Author"
+      >
+        © 2019, Nurimansyah Rifwan.
+      </p>
+      <p
+        className="Copyright"
+      >
+        <small>
+          Please note that all of the assets are trademarks and copyrights of their respective owners. Though, I'm not affiliated with 
+          <strong>
+            Nintendo, The Pokémon Company Creatures Inc.
+          </strong>
+           or 
+          <strong>
+            Game Freak
+          </strong>
+          .
+        </small>
+      </p>
+    </div>
+  </footer>,
+]
+`;

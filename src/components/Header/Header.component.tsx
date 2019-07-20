@@ -3,10 +3,11 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, FieldProps } from 'formik';
 import { AdvanceSearch } from '../index';
+import { IHeaderProps } from '../../interfaces/header';
 
 import Choices from 'choices.js';
 import 'choices.js/public/assets/styles/choices.min.css';
-import { Wrapper, AdvanceSearchContainer, FormBackground, FormContainer } from './Header.module.scss';
+import { Wrapper, AdvanceSearchContainer, FormBackground, FormContainer, WrapperNoFilter } from './Header.module.scss';
 
 // Local Interfaces
 interface IForm {
@@ -42,13 +43,13 @@ const searchForm = () => (
   </Form>
 );
 
-class HeaderComponent extends React.PureComponent {
+class HeaderComponent extends React.PureComponent<IHeaderProps> {
   public state = {
     query: Choices,
   };
 
   public componentDidMount = () => {
-    this.setState({ query: new Choices('#query') });
+    if (document.querySelector('#query')) this.setState({ query: new Choices('#query') });
   };
 
   /**
@@ -56,32 +57,39 @@ class HeaderComponent extends React.PureComponent {
    */
   public handleSubmit = () => null;
 
-  public render = () => (
-    <div className={Wrapper}>
-      <div className="container">
-        <Link to="/">
-          <h1>Pokédex</h1>
-        </Link>
-      </div>
-
-      <div className={FormBackground}>
-        <div className={classNames('container', FormContainer)}>
-          <section>
-            <Formik initialValues={{}} onSubmit={this.handleSubmit} render={searchForm} />
-          </section>
-
-          <section>
-            <p className="notification notification-green" style={{ fontSize: '1.25rem' }}>
-              Search for a Pokémon by name or using its National Pokédex number.
-            </p>
-          </section>
+  public render = () => {
+    const { noFilter } = this.props;
+    return (
+      <div className={classNames(Wrapper, noFilter && WrapperNoFilter)}>
+        <div className="container">
+          <Link to="/">
+            <h1>Pokédex</h1>
+          </Link>
         </div>
-      </div>
 
-      <div className={AdvanceSearchContainer}>
-        <AdvanceSearch />
+        {!noFilter && (
+          <>
+            <div className={FormBackground}>
+              <div className={classNames('container', FormContainer)}>
+                <section>
+                  <Formik initialValues={{}} onSubmit={this.handleSubmit} render={searchForm} />
+                </section>
+
+                <section>
+                  <p className="notification notification-green" style={{ fontSize: '1.25rem' }}>
+                    Search for a Pokémon by name or using its National Pokédex number.
+                  </p>
+                </section>
+              </div>
+            </div>
+
+            <div className={AdvanceSearchContainer}>
+              <AdvanceSearch />
+            </div>
+          </>
+        )}
       </div>
-    </div>
-  );
+    );
+  };
 }
 export default HeaderComponent;
