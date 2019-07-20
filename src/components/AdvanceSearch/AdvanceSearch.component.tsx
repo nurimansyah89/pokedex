@@ -175,9 +175,7 @@ const AdvanceSearchComponent = () => {
           </div>
         </div>
         <div className={Action}>
-          <button className="button button-gray" type="reset">
-            Reset
-          </button>
+          <input className="button button-gray" type="reset" value="Reset" />
           <button className="button button-orange" type="submit">
             <span className="fas fa-search" /> Search
           </button>

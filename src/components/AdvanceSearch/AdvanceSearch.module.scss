@@ -61,6 +61,10 @@ $desktopHeight: 650px;
   }
 }
 .Filter {
+  h2 {
+    font-weight: 500;
+  }
+
   &Type {
     span {
       &:nth-child(2) {
@@ -222,7 +226,8 @@ $desktopHeight: 650px;
   margin-top: 2rem;
   text-align: center;
 
-  button {
+  button,
+  input[type='reset'] {
     display: block;
     width: 100%;
 
@@ -305,6 +310,10 @@ $desktopHeight: 650px;
         &:focus {
           background-color: $color-red;
         }
+      }
+
+      @include bp(desktop) {
+        margin-left: 1rem;
       }
     }
 

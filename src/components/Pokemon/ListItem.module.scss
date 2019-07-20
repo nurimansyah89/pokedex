@@ -1,0 +1,42 @@
+@import 'src/styles/variables';
+
+.Wrapper {
+  display: block;
+  padding: 0.5rem;
+  position: relative;
+  top: 0px;
+
+  &:hover {
+    top: -10px;
+  }
+}
+
+.Pokemon {
+  &Image {
+    background: rgba($color-gray, 0.15);
+    border-radius: 5px;
+    text-align: center;
+  }
+  &ID {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $color-gray;
+  }
+  &Name {
+    margin: 0.5rem auto 0;
+  }
+  &Attributes {
+    margin-top: 0.5rem;
+
+    span {
+      display: inline-block;
+      margin-right: 0.25rem;
+      background: $color-green;
+      border-radius: 4px;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}

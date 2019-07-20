@@ -1,0 +1,22 @@
+@import 'src/styles/variables';
+
+.Wrapper {
+  border: 2px solid $color-red;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.Title {
+  font-size: 1.25rem;
+  color: $color-red;
+  margin-bottom: 0.5rem;
+}
+.Message {
+  color: lighten($color-gray, 10%);
+  font-weight: bold;
+}
+.AltMessage {
+  margin: 0.5rem auto;
+  padding-left: 2rem;
+  color: lighten($color-gray, 10%);
+  font-size: 0.9rem;
+}
