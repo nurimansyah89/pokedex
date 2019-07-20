@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Wrapper {
+  h1 {
+    font-weight: 300;
+    display: inline-block;
+  }
+}
+
+.FormBackground {
+  background: $color-gray;
+  color: white;
+  padding: 2rem 0;
+}
+
+.FormContainer {
+  section {
+    padding: 0 1rem;
+
+    &:nth-child(2) {
+      margin-top: 1rem;
+
+      @include bp(desktop) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include bp(desktop) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.AdvanceSearchContainer {
+  background: $color-darkblue;
+  color: white;
+  padding-top: 1rem;
+}

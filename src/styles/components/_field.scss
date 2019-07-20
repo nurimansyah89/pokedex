@@ -1,0 +1,28 @@
+.field {
+  & + .field {
+    margin-top: 1rem;
+  }
+
+  &-group {
+    * + *:not(.choices__list):not(.choices__item) {
+      margin-top: 1rem;
+    }
+
+    * + button {
+      width: 100%;
+    }
+
+    @include bp(desktop) {
+      display: flex;
+
+      * + *:not(.choices__list):not(.choices__item) {
+        margin-top: 0;
+        margin-left: 1rem;
+      }
+
+      * + button {
+        width: auto;
+      }
+    }
+  }
+}

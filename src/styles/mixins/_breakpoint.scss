@@ -1,0 +1,15 @@
+@mixin bp($size) {
+  @if $size = 'tablet' {
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $size = 'desktop' {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  } @else if $size = 'hd' {
+    @media (min-width: $breakpoint-hd) {
+      @content;
+    }
+  }
+}

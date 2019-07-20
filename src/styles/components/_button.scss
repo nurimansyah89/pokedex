@@ -1,0 +1,22 @@
+.button {
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  font-family: $font-sans-serif;
+  font-size: 1.25rem;
+  outline: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  transition: all ease 0.15s;
+
+  // Modifiers
+  &-orange {
+    background: $color-orange;
+
+    &:hover,
+    &:focus {
+      background: darken($color-orange, 10%);
+    }
+  }
+}

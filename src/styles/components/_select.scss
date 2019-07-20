@@ -1,0 +1,39 @@
+.choices {
+  margin-bottom: 0;
+  flex: 1;
+  border: 3px solid lighten($color-gray, 20%);
+  color: $color-gray;
+  border-radius: 5px;
+  width: 100%;
+
+  &__list {
+    &--dropdown {
+      border: 3px solid lighten($color-gray, 20%);
+      border-radius: 5px;
+    }
+  }
+
+  &.is-open {
+    .choices {
+      &__list {
+        &--dropdown {
+          border-color: lighten($color-gray, 50%);
+        }
+      }
+    }
+  }
+
+  &__item {
+    font-size: 1.25rem;
+  }
+
+  &__inner {
+    border: none;
+  }
+
+  &[data-type*='select-one'] {
+    &:after {
+      display: none;
+    }
+  }
+}

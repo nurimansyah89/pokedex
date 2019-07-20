@@ -1,0 +1,40 @@
+.dropdown {
+  &__pokedrop {
+    position: relative;
+
+    &:before,
+    &:after {
+      font-size: 1.25rem;
+      position: absolute;
+      display: block;
+      content: '\f12a';
+      font-family: 'Pokemon';
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1rem;
+      z-index: 1;
+    }
+
+    &:after {
+      left: auto;
+      right: 1rem;
+    }
+
+    .choices {
+      border-color: transparent;
+
+      &__inner {
+        background: $color-gray;
+        color: white;
+      }
+
+      &__list {
+        &--single {
+          .choices__item {
+            padding-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
