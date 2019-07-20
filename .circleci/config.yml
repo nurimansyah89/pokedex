@@ -34,7 +34,7 @@ jobs:
           at: .
       - run:
           name: Build Resources
-          command: yarn build
+          command: yarn build && mv build/index.html build/200.html
       - persist_to_workspace:
           root: .
           paths:
