@@ -10,6 +10,14 @@
   border: none;
   transition: all ease 0.15s;
 
+  & + & {
+    margin-top: 1rem;
+
+    @include bp(desktop) {
+      margin-top: 0;
+    }
+  }
+
   // Modifiers
   &-orange {
     background: $color-orange;
@@ -17,6 +25,14 @@
     &:hover,
     &:focus {
       background: darken($color-orange, 10%);
+    }
+  }
+  &-gray {
+    background: $color-gray;
+
+    &:hover,
+    &:focus {
+      background: darken($color-gray, 10%);
     }
   }
 }

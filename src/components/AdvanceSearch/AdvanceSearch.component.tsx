@@ -14,12 +14,20 @@ import {
   FilterHeight,
   FilterWeight,
   FilterType,
+  FilterBox,
   Range,
+  RangeInput,
   Action,
   TypeList,
   TypeContainer,
   TypeName,
   TypeAction,
+  HeightSmall,
+  HeightMedium,
+  HeightLarge,
+  WeightSmall,
+  WeightMedium,
+  WeightLarge,
 } from './AdvanceSearch.module.scss';
 
 // TODO: Remove this dummy data
@@ -116,28 +124,28 @@ const AdvanceSearchComponent = () => {
             <div className={FilterHeight}>
               <h2>Height</h2>
               <ul>
-                <li>
-                  <button type="button">small</button>
+                <li className={classNames(FilterBox, HeightSmall)}>
+                  <button type="button" />
                 </li>
-                <li>
-                  <button type="button">medium</button>
+                <li className={classNames(FilterBox, HeightMedium)}>
+                  <button type="button" />
                 </li>
-                <li>
-                  <button type="button">large</button>
+                <li className={classNames(FilterBox, HeightLarge)}>
+                  <button type="button" />
                 </li>
               </ul>
             </div>
             <div className={FilterWeight}>
               <h2>Weight</h2>
               <ul>
-                <li>
-                  <button type="button">small</button>
+                <li className={classNames(FilterBox, WeightSmall)}>
+                  <button type="button" />
                 </li>
-                <li>
-                  <button type="button">medium</button>
+                <li className={classNames(FilterBox, WeightMedium)}>
+                  <button type="button" />
                 </li>
-                <li>
-                  <button type="button">large</button>
+                <li className={classNames(FilterBox, WeightLarge)}>
+                  <button type="button" />
                 </li>
               </ul>
             </div>
@@ -145,17 +153,17 @@ const AdvanceSearchComponent = () => {
         </div>
         <div className={Range}>
           <h2>Number Range</h2>
-          <div>
-            <input type="number" name="" id="" min="1" max="1000" />
-            -
-            <input type="number" name="" id="" min="1" max="1000" />
+          <div className={RangeInput}>
+            <input type="number" className="input" name="" id="" min="1" max="1000" placeholder="1" />
+            <span>-</span>
+            <input type="number" className="input" name="" id="" min="1" max="1000" placeholder="1000" />
           </div>
         </div>
         <div className={Action}>
-          <button className="button-gray" type="reset">
+          <button className="button button-gray" type="reset">
             Reset
           </button>
-          <button className="button-orange" type="submit">
+          <button className="button button-orange" type="submit">
             <span className="fas fa-search" /> Search
           </button>
         </div>

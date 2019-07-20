@@ -1,8 +1,8 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-$mobileHeight: 1100px;
-$desktopHeight: 500px;
+$mobileHeight: 1250px;
+$desktopHeight: 650px;
 
 .Wrapper {
   position: relative;
@@ -69,6 +69,48 @@ $desktopHeight: 500px;
     }
   }
 
+  &Box {
+    button {
+      display: block;
+      background: $color-box;
+      border-radius: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+      font-family: 'Pokemon';
+      border: none;
+      color: $color-gray;
+      font-size: 48px;
+      transition: all ease 0.15s;
+
+      &:hover,
+      &:focus {
+        background: $color-gray;
+        color: white;
+      }
+
+      @include bp(desktop) {
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+
+  &Height,
+  &Weight {
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
   @include bp(desktop) {
     display: flex;
 
@@ -91,9 +133,112 @@ $desktopHeight: 500px;
     }
   }
 }
+.Height {
+  &Small,
+  &Medium,
+  &Large {
+    button {
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &Small {
+    button {
+      &:before {
+        content: '\f118';
+      }
+    }
+  }
+  &Medium {
+    button {
+      &:before {
+        content: '\f117';
+      }
+    }
+  }
+  &Large {
+    button {
+      &:before {
+        content: '\f116';
+      }
+    }
+  }
+}
+.Weight {
+  &Small,
+  &Medium,
+  &Large {
+    button {
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &Small {
+    button {
+      &:before {
+        content: '\f11b';
+      }
+    }
+  }
+  &Medium {
+    button {
+      &:before {
+        content: '\f11a';
+      }
+    }
+  }
+  &Large {
+    button {
+      &:before {
+        content: '\f119';
+      }
+    }
+  }
+}
 .Range {
+  &Input {
+    display: flex;
+    align-items: center;
+
+    > * {
+      &:nth-child(2) {
+        padding: 0 0.5rem;
+      }
+    }
+
+    @include bp(desktop) {
+      input:nth-child(1),
+      input:nth-child(3) {
+        width: 100px;
+      }
+    }
+  }
 }
 .Action {
+  margin-top: 2rem;
+  text-align: center;
+
+  button {
+    display: block;
+    width: 100%;
+
+    @include bp(desktop) {
+      display: inline-block;
+      width: auto;
+
+      &:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  @include bp(desktop) {
+    text-align: initial;
+  }
 }
 .Type {
   &List {
@@ -121,7 +266,6 @@ $desktopHeight: 500px;
   }
 
   &Name {
-    margin-right: 1rem;
     background: white;
     border-radius: 4px;
     border: 3px solid rgba(white, 0.5);
