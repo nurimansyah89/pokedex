@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field, FieldProps, FormikValues } from 'formik';
+import { Formik, Form, Field, FieldProps } from 'formik';
 import { AdvanceSearch } from '../index';
 
 import Choices from 'choices.js';
