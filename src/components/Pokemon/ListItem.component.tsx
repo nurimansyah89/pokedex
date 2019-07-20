@@ -3,7 +3,7 @@ import { IPokemonListItem } from '../../interfaces/pokemon/item';
 import { Wrapper, PokemonImage, PokemonID, PokemonName, PokemonAttributes } from './ListItem.module.scss';
 
 const PokemonListItemComponent: React.FC<IPokemonListItem> = ({ pokemon }) => (
-  <a className={Wrapper}>
+  <a href="/" className={Wrapper}>
     <div className={PokemonImage}>
       <img src={pokemon.image} alt={pokemon.name} />
     </div>
