@@ -21,3 +21,6 @@ export const HeightLarge: string;
 export const WeightSmall: string;
 export const WeightMedium: string;
 export const WeightLarge: string;
+export const Selected: string;
+export const SelectedType: string;
+export const SelectedValue: string;

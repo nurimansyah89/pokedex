@@ -28,6 +28,9 @@ import {
   WeightSmall,
   WeightMedium,
   WeightLarge,
+  Selected,
+  SelectedType,
+  SelectedValue,
 } from './AdvanceSearch.module.scss';
 
 // TODO: Remove this dummy data
@@ -77,6 +80,18 @@ const AdvanceSearchComponent = () => {
 
   return (
     <div className={classNames('container', Wrapper)}>
+      <div className={Selected}>
+        <ul>
+          <li>
+            <span className={SelectedType}>Type:</span>
+            <span className={SelectedValue}>2 Selected</span>
+            <button type="button">
+              <span className="fas fa-times" />
+            </button>
+          </li>
+        </ul>
+      </div>
+
       <button type="button" className={ToggleButton} onClick={AdvanceSearchComponent.handleToggle}>
         Show Advance Search{' '}
         <span className="fa-stack">

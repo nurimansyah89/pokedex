@@ -25,6 +25,15 @@
         margin-top: 0;
       }
     }
+
+    @include bp(desktop) {
+      &:nth-child(1) {
+        padding-left: 0;
+      }
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+    }
   }
 
   @include bp(desktop) {
