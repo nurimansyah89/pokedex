@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Wrapper {
+  @include bp(desktop) {
+    width: 50%;
+  }
+}
