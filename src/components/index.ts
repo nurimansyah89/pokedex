@@ -1,7 +1,8 @@
 import Alert from './Alert/Alert.component';
 import AdvanceSearch from './AdvanceSearch/AdvanceSearch.component';
+import Footer from './Footer/Footer.component';
 import Header from './Header/Header.component';
-import SortPokemon from './SortPokemon/SortPokemon.component';
 import Pokemon from './Pokemon';
+import SortPokemon from './SortPokemon/SortPokemon.component';
 
-export { Alert, AdvanceSearch, Header, Pokemon, SortPokemon };
+export { Alert, AdvanceSearch, Footer, Header, Pokemon, SortPokemon };

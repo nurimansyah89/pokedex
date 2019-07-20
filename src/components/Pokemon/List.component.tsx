@@ -26,6 +26,9 @@ const PokemonListComponent: React.FC<IPokemonList> = ({ renderItem, data }) => (
     <div className={classNames('align-center', Action)}>
       <button className="button button-blue">Load More Pokemon</button>
     </div>
+    <div className="align-center loader">
+      <span className="fas fa-spin fa-spinner fa-2x" />
+    </div>
   </div>
 );
 export default PokemonListComponent;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Header, SortPokemon, Pokemon } from '../components';
+import { Footer, Header, SortPokemon, Pokemon } from '../components';
 
 class IndexPage extends React.Component {
   public render = () => {
@@ -57,6 +57,8 @@ class IndexPage extends React.Component {
           ]}
           renderItem={({ item }) => <Pokemon.ListItem pokemon={item} />}
         />
+
+        <Footer />
       </>
     );
   };

@@ -1,0 +1,18 @@
+@import 'src/styles/variables';
+
+.Wrapper {
+  background: $color-darkblue;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.Author {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(white, 0.15);
+  color: rgba(white, 0.75);
+}
+.Copyright {
+  margin-top: 0.5rem;
+  color: rgba(white, 0.5);
+}
