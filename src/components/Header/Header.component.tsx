@@ -54,7 +54,7 @@ class HeaderComponent extends React.PureComponent {
   /**
    * Search the pokemon by it's name or number
    */
-  public handleSubmit = (values: FormikValues) => console.log(values);
+  public handleSubmit = () => null;
 
   public render = () => (
     <div className={Wrapper}>

@@ -13,7 +13,8 @@
     "ordered-imports": false,
     "max-line-length": [true, 120],
     "object-shorthand-properties-first": false,
-    "semicolon": [true, "always", "ignore-bound-class-methods"]
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "no-unused-expression": [true, "allow-new"]
   },
   "rulesDirectory": []
 }

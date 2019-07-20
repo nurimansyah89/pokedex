@@ -65,7 +65,7 @@ const dummyData: IPokemonType[] = [
 const AdvanceSearchComponent = () => {
   // Init choices
   const abillityElement = document.querySelector('#ability') as HTMLElement;
-  const abilityDropdown = abillityElement ? new Choices(abillityElement) : null;
+  if (abillityElement) new Choices(abillityElement);
 
   return (
     <div className={classNames('container', Wrapper)}>
