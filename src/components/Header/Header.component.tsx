@@ -1,12 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field, FieldProps } from 'formik';
+import { Formik, Form, Field, FieldProps, FormikValues } from 'formik';
 import { AdvanceSearch } from '../index';
 import { IHeaderProps } from '../../interfaces/components/header';
 
-import Choices from 'choices.js';
-import 'choices.js/public/assets/styles/choices.min.css';
 import { Wrapper, AdvanceSearchContainer, FormBackground, FormContainer, WrapperNoFilter } from './Header.module.scss';
 
 // Local Interfaces
@@ -24,12 +22,7 @@ const searchForm = () => (
       <Field name="query">
         {({ field }: FieldProps<IForm>) => (
           <div className="field-group">
-            <select {...field} id="query" style={{ flex: 1 }} placeholder="Search Pokémon">
-              <option placeholder="Search Pokémon">Search Pokémon</option>
-              <option>Bulbasaur</option>
-              <option>Charmender</option>
-              <option>Squirtle</option>
-            </select>
+            <input type="search" {...field} className="input input__search" id="" placeholder="Search Pokémon" />
             <button type="submit" className="button button-orange">
               <span className="fas fa-search" />
             </button>
@@ -44,18 +37,12 @@ const searchForm = () => (
 );
 
 class HeaderComponent extends React.PureComponent<IHeaderProps> {
-  public state = {
-    query: Choices,
-  };
-
-  public componentDidMount = () => {
-    if (document.querySelector('#query')) this.setState({ query: new Choices('#query') });
-  };
-
   /**
    * Search the pokemon by it's name or number
    */
-  public handleSubmit = () => null;
+  public handleSubmit = async (values: FormikValues) => {
+    if (this.props.handleSearch) this.props.handleSearch(values.query);
+  };
 
   public render = () => {
     const { noFilter } = this.props;
@@ -72,7 +59,13 @@ class HeaderComponent extends React.PureComponent<IHeaderProps> {
             <div className={FormBackground}>
               <div className={classNames('container', FormContainer)}>
                 <section>
-                  <Formik initialValues={{}} onSubmit={this.handleSubmit} render={searchForm} />
+                  <Formik
+                    initialValues={{
+                      query: '',
+                    }}
+                    onSubmit={this.handleSubmit}
+                    render={searchForm}
+                  />
                 </section>
 
                 <section>

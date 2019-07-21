@@ -1,9 +1,81 @@
 import { ThunkDispatch, ThunkAction } from 'redux-thunk';
-import { POKEMON_FETCH, POKEMON_FETCH_MORE } from '../constants';
+import { POKEMON_FETCH, POKEMON_FETCH_MORE, POKEMON_SEARCH } from '../constants';
 import { AnyAction } from 'redux';
 import { pokemonConfig } from '../../config';
 import { IPokemonData, IPokemonAbility } from '../../interfaces/data/pokemon';
 import { IPokemonType } from '../../interfaces/data/pokedex/type';
+
+export const searchPokemon = (query: string): ThunkAction<void, {}, {}, AnyAction> => async (
+  dispatch: ThunkDispatch<{}, {}, AnyAction>,
+) => {
+  // Fetch Data
+  try {
+    const response = await fetch(`${pokemonConfig.apiUrl}/pokemon/${query}`);
+    if (!query || query === '') {
+      const { data: responseData, next, prev } = await processData(response);
+
+      dispatch({ type: POKEMON_FETCH, data: responseData, next, prev });
+      return;
+    }
+    const searchData = await response.json();
+
+    // Get pokemon details
+    const pokemonDetail: {
+      id: number;
+      name: string;
+      height: number;
+      weight: number;
+      abilities: Array<IPokemonAbility & { ability: { url: string } }>;
+      types: Array<IPokemonType & { type: { name: string; url: string } }>;
+      stats: any;
+    } = await searchData;
+
+    // Get pokemon abilities
+    const abilities = await Promise.all(
+      pokemonDetail.abilities.map(async (abilityRow: { is_hidden: boolean; ability: { url: string } }) => {
+        const abilityResponse = await fetch(abilityRow.ability.url);
+        const abilityData = await abilityResponse.json();
+        return {
+          name: abilityData.name,
+          description: abilityData.flavor_text_entries.find(
+            (findAbility: { language: { name: string } }) => findAbility.language.name === 'en',
+          ).flavor_text,
+          is_hidden: abilityRow.is_hidden,
+        };
+      }),
+    );
+
+    // Get pokemon types
+    const types = pokemonDetail.types.map(typeData => ({
+      name: typeData.type.name,
+      slot: typeData.slot,
+    }));
+
+    const data: IPokemonData[] = [
+      {
+        id: searchData.id,
+        abilities,
+        height: pokemonDetail.height,
+        weight: pokemonDetail.weight,
+        imageUrl: `${pokemonConfig.imageUrl}/${String(pokemonDetail.id).padStart(3, '0')}.png`,
+        name: pokemonDetail.name,
+        stats: {
+          attack: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'attack').base_stat,
+          defense: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'defense').base_stat,
+          hp: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'hp').base_stat,
+          specialAttack: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'special-attack').base_stat,
+          specialDefense: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'special-defense').base_stat,
+          speed: pokemonDetail.stats.find((statRow: any) => statRow.stat.name === 'speed').base_stat,
+        },
+        types,
+      },
+    ];
+
+    dispatch({ type: POKEMON_SEARCH, data });
+  } catch (e) {
+    throw e;
+  }
+};
 
 export const sortData = (type: string) => ({ type });
 

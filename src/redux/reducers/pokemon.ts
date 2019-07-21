@@ -6,6 +6,7 @@ import {
   POKEMON_SORT_BY_HIGHEST_NUMBER,
   POKEMON_SORT_BY_A_Z,
   POKEMON_SORT_BY_Z_A,
+  POKEMON_SEARCH,
 } from '../constants';
 
 const PokemonData = (
@@ -17,6 +18,8 @@ const PokemonData = (
   action: { type: string; data: any[]; next: string; prev: string },
 ) => {
   switch (action.type) {
+    case POKEMON_SEARCH:
+      return { ...state, data: action.data };
     case POKEMON_SORT_BY_HIGHEST_NUMBER:
       return { ...state, data: [...state.data.sort((a, b) => b.id - a.id)] };
     case POKEMON_SORT_BY_LOWEST_NUMBER:

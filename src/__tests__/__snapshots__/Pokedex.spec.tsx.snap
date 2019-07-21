@@ -39,33 +39,16 @@ Array [
               <div
                 className="field-group"
               >
-                <select
-                  id="query"
+                <input
+                  className="input input__search"
+                  id=""
                   name="query"
                   onBlur={[Function]}
                   onChange={[Function]}
                   placeholder="Search Pokémon"
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                >
-                  <option
-                    placeholder="Search Pokémon"
-                  >
-                    Search Pokémon
-                  </option>
-                  <option>
-                    Bulbasaur
-                  </option>
-                  <option>
-                    Charmender
-                  </option>
-                  <option>
-                    Squirtle
-                  </option>
-                </select>
+                  type="search"
+                  value=""
+                />
                 <button
                   className="button button-orange"
                   type="submit"
@@ -730,9 +713,6 @@ Array [
   <div
     className="container Wrapper"
   >
-    <ul
-      className="ListWrapper"
-    />
     <div
       className="align-center loader"
     >

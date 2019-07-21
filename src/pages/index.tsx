@@ -6,6 +6,7 @@ import { IPokemonStateProps, IPokemonDispatchProps, IPokemonData } from '../inte
 
 import { PokemonAction } from '../redux/actions';
 import { ThunkDispatch } from 'redux-thunk';
+import { searchPokemon } from '../redux/actions/pokemon';
 
 const mapStateToProps = ({ PokemonData }: IPokemonStateProps) => ({
   data: PokemonData.data,
@@ -15,6 +16,7 @@ const mapStateToProps = ({ PokemonData }: IPokemonStateProps) => ({
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
   loadPokemon: () => dispatch(PokemonAction.loadData()),
   loadMorePokemon: (url: string | null) => dispatch(PokemonAction.loadNextData(url)),
+  search: (query: string) => dispatch(searchPokemon(query)),
 });
 
 interface IState {
@@ -43,7 +45,12 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
   public handleLoadNextData = async () => {
     this.setState({ isLoading: true });
     await this.props.loadMorePokemon(this.props.next);
-    // await this.props.loadPokemon();
+    this.setState({ isLoading: false });
+  };
+
+  public handleSearch = async (query: string) => {
+    this.setState({ isLoading: true });
+    await this.props.search(query);
     this.setState({ isLoading: false });
   };
 
@@ -53,7 +60,7 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
 
     return (
       <>
-        <Header />
+        <Header handleSearch={this.handleSearch} />
 
         {/* Sort */}
         <SortPokemon />
