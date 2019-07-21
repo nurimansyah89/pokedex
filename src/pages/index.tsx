@@ -3,6 +3,10 @@ import * as React from 'react';
 import { Footer, Header, SortPokemon, Pokemon } from '../components';
 
 class IndexPage extends React.Component {
+  public componentDidMount = () => {
+    window.scrollTo(0, 0);
+  };
+
   public render = () => {
     return (
       <>

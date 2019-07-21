@@ -687,7 +687,7 @@ Array [
               Omanyte
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -725,7 +725,7 @@ Array [
               Omastar
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -763,7 +763,7 @@ Array [
               Kabuto
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -801,7 +801,7 @@ Array [
               Kabutops
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -839,7 +839,7 @@ Array [
               Slowpoke
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -877,7 +877,7 @@ Array [
               Slowbro
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -915,7 +915,7 @@ Array [
               Starmie
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock
@@ -953,7 +953,7 @@ Array [
               Slowking
             </h3>
             <div
-              className="PokemonAttributes"
+              className="PokemonTypes"
             >
               <span>
                 Rock

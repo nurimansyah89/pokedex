@@ -18,6 +18,593 @@ Array [
       </a>
     </div>
   </div>,
+  <nav
+    className="Wrapper"
+  >
+    <div
+      className="container Copy"
+    >
+      <a
+        className="CopyPrev"
+        href="/"
+      >
+        <span
+          className="fa-stack CopyIcon"
+        >
+          <i
+            className="fas fa-circle fa-stack-1x"
+          />
+          <i
+            className="fas fa-angle-left fa-stack-1x"
+          />
+        </span>
+        <span
+          className="CopyText"
+        >
+          <span
+            className="CopyNumber"
+          >
+            #809
+          </span>
+          <span>
+            Melmetal
+          </span>
+        </span>
+      </a>
+      <a
+        className="CopyNext"
+        href="/"
+      >
+        <span
+          className="CopyText"
+        >
+          <span>
+            Ivysaur
+          </span>
+          <span
+            className="CopyNumber"
+          >
+            #002
+          </span>
+        </span>
+        <span
+          className="fa-stack CopyIcon"
+        >
+          <i
+            className="fas fa-circle fa-stack-1x"
+          />
+          <i
+            className="fas fa-angle-right fa-stack-1x"
+          />
+        </span>
+      </a>
+    </div>
+  </nav>,
+  <div
+    className="Wrapper"
+  >
+    <div
+      className="container WrapperContainer"
+    >
+      <div
+        className="Pokemon"
+      >
+        <div
+          className="PokemonName"
+        >
+          <span>
+            Name
+          </span>
+           
+          <span>
+            #001
+          </span>
+        </div>
+        <div
+          className="PokemonDetail"
+        >
+          <section>
+            <div
+              className="PokemonImage"
+            >
+              <img
+                alt=""
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+              />
+            </div>
+            <div
+              className="PokemonStats"
+            >
+              <h4>
+                Stats
+              </h4>
+              <div
+                className="Stats"
+              >
+                <ul>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      HP
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      Attack
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      Defense
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      Special Attack
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      Special Defense
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="StatsBar"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                      <span
+                        className="StatsBar_Full"
+                      />
+                    </div>
+                    <div
+                      className="StatsTitle"
+                    >
+                      Speed
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div
+              className="PokemonInfo"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic delectus voluptatibus quod quibusdam tempore commodi ullam repellendus cumque nisi obcaecati, error natus exercitationem! Excepturi ea ipsam placeat, quidem laudantium repudiandae?
+              </p>
+              <div
+                className="PokemonAttributes"
+              >
+                <ul>
+                  <li>
+                    <h4>
+                      Height
+                    </h4>
+                    <div>
+                      Value
+                    </div>
+                  </li>
+                  <li>
+                    <h4>
+                      Weight
+                    </h4>
+                    <div>
+                      Value
+                    </div>
+                  </li>
+                  <li>
+                    <h4>
+                      Gender
+                    </h4>
+                    <div>
+                      Value
+                    </div>
+                  </li>
+                  <li>
+                    <h4>
+                      Category
+                    </h4>
+                    <div>
+                      Value
+                    </div>
+                  </li>
+                  <li>
+                    <h4>
+                      Abilities
+                    </h4>
+                    <div>
+                      <ul>
+                        <li>
+                          <span>
+                            Overgrowth
+                          </span>
+                          <button
+                            type="button"
+                          >
+                            <span
+                              className="fas fa-question-circle"
+                            />
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div
+                  className="AttributeDetail"
+                >
+                  <button
+                    type="button"
+                  >
+                    <span
+                      className="fas fa-times-circle"
+                    />
+                  </button>
+                  <h5>
+                    Ability Info
+                  </h5>
+                  <h6>
+                    Title
+                  </h6>
+                  <p>
+                    Description
+                  </p>
+                </div>
+              </div>
+              <div
+                className="PokemonAdditional"
+              >
+                <h3>
+                  Type
+                </h3>
+                <ul>
+                  <li>
+                    <a
+                      href="/"
+                    >
+                      Grass
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                    >
+                      Poison
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                className="PokemonAdditional"
+              >
+                <h3>
+                  Weakness
+                </h3>
+                <ul>
+                  <li>
+                    <a
+                      href="/"
+                    >
+                      Grass
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                    >
+                      Poison
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          className="PokemonEvolution"
+        >
+          <h2>
+            Evolutions
+          </h2>
+          <p>
+            This Pokémon does not evolve.
+          </p>
+          <div
+            className="Evolution"
+          >
+            <div>
+              <a
+                href="/"
+              >
+                <div
+                  className="EvolutionImage"
+                >
+                  <img
+                    alt=""
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png"
+                  />
+                </div>
+                <div
+                  className="EvolutionInfo"
+                >
+                  <span>
+                    Charmender
+                  </span>
+                   
+                  <span>
+                    #001
+                  </span>
+                </div>
+                <ul
+                  className="EvolutionAttributes"
+                >
+                  <li>
+                    <span>
+                      Grass
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Poison
+                    </span>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div>
+              <a
+                href="/"
+              >
+                <div
+                  className="EvolutionImage"
+                >
+                  <img
+                    alt=""
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png"
+                  />
+                </div>
+                <div
+                  className="EvolutionInfo"
+                >
+                  <span>
+                    Charmeleon
+                  </span>
+                   
+                  <span>
+                    #001
+                  </span>
+                </div>
+                <ul
+                  className="EvolutionAttributes"
+                >
+                  <li>
+                    <span>
+                      Grass
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Poison
+                    </span>
+                  </li>
+                </ul>
+              </a>
+              <a
+                href="/"
+              >
+                <div
+                  className="EvolutionImage"
+                >
+                  <img
+                    alt=""
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/005.png"
+                  />
+                </div>
+                <div
+                  className="EvolutionInfo"
+                >
+                  <span>
+                    ChariGaraGara
+                  </span>
+                   
+                  <span>
+                    #001
+                  </span>
+                </div>
+                <ul
+                  className="EvolutionAttributes"
+                >
+                  <li>
+                    <span>
+                      Grass
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Poison
+                    </span>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div>
+              <a
+                href="/"
+              >
+                <div
+                  className="EvolutionImage"
+                >
+                  <img
+                    alt=""
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"
+                  />
+                </div>
+                <div
+                  className="EvolutionInfo"
+                >
+                  <span>
+                    Charizard
+                  </span>
+                   
+                  <span>
+                    #001
+                  </span>
+                </div>
+                <ul
+                  className="EvolutionAttributes"
+                >
+                  <li>
+                    <span>
+                      Grass
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Poison
+                    </span>
+                  </li>
+                </ul>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="align-center Action"
+      >
+        <a
+          className="button button-orange"
+          href="/"
+          onClick={[Function]}
+        >
+          Explore More Pokémon
+        </a>
+      </div>
+    </div>
+  </div>,
   <footer
     className="Wrapper"
   >

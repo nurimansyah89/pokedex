@@ -1,0 +1,365 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Wrapper {
+  position: relative;
+  margin-top: -2rem;
+
+  &Container {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: white;
+    box-shadow: 0 0 3px rgba(black, 0.15);
+  }
+
+  @include bp(desktop) {
+    margin-top: -3rem;
+  }
+}
+
+.Pokemon {
+  padding: 2rem 0;
+
+  &Name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+
+    span:nth-child(2) {
+      color: $color-blue;
+    }
+  }
+  &Detail {
+    margin-top: 2rem;
+
+    @include bp(desktop) {
+      display: flex;
+
+      section {
+        width: 50%;
+      }
+    }
+  }
+
+  &Image {
+    background: $color-box;
+    border-radius: 4px;
+    padding: 1rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &Stats {
+    background: $color-blue;
+    border-radius: 4px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    h4 {
+      margin: 0 auto;
+    }
+  }
+
+  &Attributes {
+    background: $color-green;
+    color: white;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    > ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      columns: 2;
+
+      > li {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+
+        h4 {
+          margin: 0 auto;
+          font-weight: 600;
+          font-size: 1.25rem;
+        }
+
+        div {
+          font-size: 0.9rem;
+          letter-spacing: 0.5px;
+        }
+
+        button {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: white;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0 auto;
+          padding: 0;
+
+          > li {
+            * {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &Info {
+    @include bp(desktop) {
+      padding-left: 1rem;
+    }
+
+    > p {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+    }
+  }
+
+  &Additional {
+    margin-top: 2rem;
+
+    h3 {
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style: none;
+      margin: 1rem auto 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 0.5rem;
+
+        a {
+          font-size: 0.9rem;
+          display: inline-block;
+          background: $color-red;
+          padding: 0.25rem 0.5rem;
+          color: white;
+          border-radius: 4px;
+          border: 1px solid transparent;
+
+          &:hover {
+            background: white;
+            border-color: $color-red;
+            color: $color-red;
+          }
+        }
+      }
+    }
+  }
+
+  &Evolution {
+    margin-top: 2rem;
+    background: lighten($color-gray, 5%);
+    border-radius: 4px;
+    color: white;
+    padding: 1rem;
+
+    > p {
+      margin-top: 1rem;
+    }
+
+    h2 {
+      margin: 0 auto;
+    }
+  }
+}
+
+.AttributeDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lighten(black, 25%);
+  padding: 1rem;
+  display: none;
+
+  button {
+    background: #777777;
+    border: none;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+  }
+
+  h5,
+  h6 {
+    margin: 0 auto;
+  }
+
+  h5 {
+    color: lighten($color-gray, 30%);
+    margin-bottom: 1rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+  }
+  p {
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+}
+
+.Stats {
+  margin-top: 1rem;
+
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    columns: 3;
+
+    li {
+      font-size: 0.8rem;
+    }
+
+    @include bp(desktop) {
+      columns: 6;
+    }
+  }
+
+  &Title {
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+  &Bar {
+    span {
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      background: rgba(white, 0.25);
+
+      &.Stats {
+        &Bar {
+          &_Full {
+            background: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Evolution {
+  > div {
+    &:not(:first-child) {
+      margin-top: 2rem;
+      text-align: center;
+
+      &:before {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 2rem;
+      }
+    }
+
+    > a {
+      display: block;
+      &:not(:first-child) {
+        margin-top: 2rem;
+        text-align: center;
+        color: white;
+
+        &:before {
+          content: 'OR';
+          font-weight: bold;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  &Image {
+    text-align: center;
+    margin-top: 1rem;
+
+    img {
+      max-width: 75%;
+      border-radius: 100%;
+      background: white;
+      padding: 1rem;
+      position: relative;
+    }
+  }
+  &Info {
+    text-align: center;
+    margin-top: 1rem;
+    color: white;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 600;
+
+      &:nth-child(2) {
+        color: darken($color-gray, 10%);
+      }
+    }
+  }
+  &Attributes {
+    list-style: none;
+    margin: 1rem auto 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-right: 1rem;
+      background: $color-green;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      color: white;
+    }
+  }
+
+  @include bp(desktop) {
+    display: flex;
+    align-items: center;
+
+    > div {
+      flex: 1;
+
+      &:not(:first-child) {
+        margin-top: 0;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          left: -1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          content: '\f054';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.Action {
+  padding-bottom: 4rem;
+}
