@@ -1,5 +1,6 @@
 .button {
   border-radius: 5px;
+  display: inline-block;
   background: transparent;
   color: white;
   font-family: $font-sans-serif;
@@ -25,6 +26,7 @@
     &:hover,
     &:focus {
       background: darken($color-orange, 10%);
+      color: white;
     }
   }
   &-gray {
@@ -33,6 +35,7 @@
     &:hover,
     &:focus {
       background: darken($color-gray, 10%);
+      color: white;
     }
   }
   &-blue {
@@ -41,6 +44,7 @@
     &:hover,
     &:focus {
       background: darken($color-blue, 10%);
+      color: white;
     }
   }
 }

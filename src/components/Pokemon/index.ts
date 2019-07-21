@@ -1,4 +1,5 @@
+import Detail from './Detail.component';
 import List from './List.component';
 import ListItem from './ListItem.component';
 
-export default { List, ListItem };
+export default { Detail, List, ListItem };

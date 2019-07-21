@@ -1,0 +1,62 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Wrapper {
+  position: relative;
+  background: #555555;
+  padding-bottom: 2rem;
+
+  @include bp(desktop) {
+    padding-bottom: 3rem;
+  }
+}
+.Copy {
+  overflow: hidden;
+
+  > a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 1rem 0;
+
+    > span {
+      i:nth-child(2) {
+        color: #555555;
+      }
+    }
+
+    &:hover {
+      color: $color-green;
+    }
+  }
+
+  &Prev {
+    float: left;
+  }
+  &Next {
+    float: right;
+  }
+  &Text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: lighten($color-gray, 30%);
+
+    span:nth-child(1) {
+      margin-right: 0.5rem;
+    }
+
+    @include bp(desktop) {
+      font-size: 1.25rem;
+    }
+  }
+  &Number {
+    color: white;
+  }
+  &Icon {
+    font-size: 0.85rem;
+
+    @include bp(desktop) {
+      font-size: 1.25rem;
+    }
+  }
+}
