@@ -5,9 +5,16 @@ import { IPokemonList } from '../../interfaces/components/pokemon/list';
 import { Action, ListWrapper, Wrapper } from './List.module.scss';
 import { Alert } from '../index';
 
-const PokemonListComponent: React.FC<IPokemonList> = ({ renderItem, data, isNext, isLoading, loadNextData }) => (
+const PokemonListComponent: React.FC<IPokemonList> = ({
+  renderItem,
+  data,
+  isNext,
+  isLoading,
+  isSearch,
+  loadNextData,
+}) => (
   <div className={classNames('container', Wrapper)}>
-    {!isLoading && (
+    {!isSearch && (
       <ul className={ListWrapper}>
         {data.map(pokemon => (
           <li key={pokemon.id}>{renderItem({ item: pokemon })}</li>
@@ -26,7 +33,6 @@ const PokemonListComponent: React.FC<IPokemonList> = ({ renderItem, data, isNext
         ]}
       />
     )}
-
     {!isLoading && isNext && data.length > 1 && (
       <div className={classNames('align-center', Action)}>
         <button className="button button-blue" type="button" onClick={loadNextData}>
@@ -34,7 +40,6 @@ const PokemonListComponent: React.FC<IPokemonList> = ({ renderItem, data, isNext
         </button>
       </div>
     )}
-
     {isLoading && (
       <div className="align-center loader">
         <span className="fas fa-spin fa-spinner fa-2x" />

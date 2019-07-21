@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
 
 interface IState {
   isLoading: boolean;
+  isSearch: boolean;
 }
 interface IProps {
   data: IPokemonData[];
@@ -31,6 +32,7 @@ interface IProps {
 class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> {
   public state = {
     isLoading: false,
+    isSearch: false,
   };
 
   public componentDidMount = async () => {
@@ -49,13 +51,13 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
   };
 
   public handleSearch = async (query: string) => {
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true, isSearch: true });
     await this.props.search(query);
-    this.setState({ isLoading: false });
+    this.setState({ isLoading: false, isSearch: false });
   };
 
   public render = () => {
-    const { isLoading } = this.state;
+    const { isLoading, isSearch } = this.state;
     const { data, next, prev } = this.props;
 
     return (
@@ -69,6 +71,7 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
         <Pokemon.List
           data={data}
           isLoading={isLoading}
+          isSearch={isSearch}
           isNext={next}
           isPrev={prev}
           renderItem={({ item }) => <Pokemon.ListItem pokemon={item} />}

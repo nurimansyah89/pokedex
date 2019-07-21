@@ -7,5 +7,6 @@ export interface IPokemonList {
   isPrev: string | null;
   isNext: string | null;
   isLoading: boolean;
+  isSearch: boolean;
   loadNextData: () => void;
 }
