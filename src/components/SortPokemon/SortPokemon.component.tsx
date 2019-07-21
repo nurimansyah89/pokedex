@@ -12,6 +12,7 @@ class SortPokemonComponent extends React.PureComponent {
     if (sortDropdown)
       new Choices(sortDropdown, {
         shouldSort: false,
+        searchEnabled: false,
       });
   };
 
