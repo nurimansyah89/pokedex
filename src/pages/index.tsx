@@ -50,6 +50,7 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
   public render = () => {
     const { isLoading } = this.state;
     const { data, next, prev } = this.props;
+
     return (
       <>
         <Header />

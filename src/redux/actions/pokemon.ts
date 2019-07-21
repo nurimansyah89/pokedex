@@ -5,6 +5,8 @@ import { pokemonConfig } from '../../config';
 import { IPokemonData, IPokemonAbility } from '../../interfaces/data/pokemon';
 import { IPokemonType } from '../../interfaces/data/pokedex/type';
 
+export const sortData = (type: string) => ({ type });
+
 const processData: (
   response: Response,
 ) => Promise<{

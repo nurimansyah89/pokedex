@@ -697,7 +697,7 @@ Array [
     >
       <select
         id="sortDropdown"
-        name=""
+        onChange={[Function]}
       >
         <option
           value=""
@@ -705,22 +705,22 @@ Array [
           Sort results by...
         </option>
         <option
-          value=""
+          value="POKEMON_SORT_BY_LOWEST_NUMBER"
         >
           Lowest Number (First)
         </option>
         <option
-          value=""
+          value="POKEMON_SORT_BY_HIGHEST_NUMBER"
         >
           Highest Number (First)
         </option>
         <option
-          value=""
+          value="POKEMON_SORT_BY_A_Z"
         >
           A-Z
         </option>
         <option
-          value=""
+          value="POKEMON_SORT_BY_Z_A"
         >
           Z-A
         </option>

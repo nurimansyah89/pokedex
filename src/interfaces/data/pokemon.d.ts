@@ -30,6 +30,7 @@ export interface IPokemonState {
   next: string | null;
   prev: string | null;
   data: IPokemonData[];
+  sort?: string | null;
 }
 
 export interface IPokemonStateProps {
