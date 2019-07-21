@@ -1,3 +1,4 @@
 import routerConfig from './router';
+import pokemonConfig from './pokemon';
 
-export { routerConfig };
+export { routerConfig, pokemonConfig };

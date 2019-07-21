@@ -24,7 +24,7 @@ jobs:
             - node_modules
       - run:
           name: Start Jest Testing
-          command: yarn test --ci --coverage --watchAll=false
+          command: yarn test --ci
   build:
     docker:
       - image: circleci/node

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { IPokemonType } from '../../interfaces/pokedex/type';
+import { IPokemonType } from '../../interfaces/data/pokedex/type';
 
 import Choices from 'choices.js';
 import 'choices.js/public/assets/styles/choices.min.css';
@@ -37,39 +37,62 @@ import {
 const dummyData: IPokemonType[] = [
   {
     name: 'Bug',
+    background: '#729f3f',
+    color: 'white',
   },
   {
     name: 'Dragon',
+    background: '#53a4cf',
+    color: 'white',
   },
   {
     name: 'Fairy',
+    background: '#fdb9e9',
   },
   {
     name: 'Fire',
+    background: '#fd7d24',
+    color: 'white',
   },
   {
     name: 'Ghost',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Ground',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Normal',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Physic',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Steel',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Dark',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Electric',
+    background: '#7b62a3',
+    color: 'white',
   },
   {
     name: 'Fighting',
+    background: '#7b62a3',
+    color: 'white',
   },
 ];
 
@@ -117,7 +140,9 @@ const AdvanceSearchComponent = () => {
               {dummyData.map(item => (
                 <li key={item.name}>
                   <div className={TypeContainer}>
-                    <div className={TypeName}>{item.name}</div>
+                    <div className={TypeName} style={{ background: item.background, color: item.color }}>
+                      {item.name}
+                    </div>
                     <div className={TypeAction}>
                       <button type="button">T</button>
                       <button type="button">W</button>

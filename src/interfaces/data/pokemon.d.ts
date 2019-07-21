@@ -1,0 +1,40 @@
+import { IPokemonType } from './pokedex/type';
+
+export interface IPokemonStats {
+  hp: number;
+  attack: number;
+  defense: number;
+  specialAttack: number;
+  specialDefense: number;
+  speed: number;
+}
+
+export interface IPokemonAbility {
+  name: string;
+  description: string;
+  is_hidden: boolean;
+}
+
+export interface IPokemonData {
+  id: number;
+  imageUrl: string;
+  abilities: IPokemonAbility[];
+  height: number;
+  name: string;
+  stats: IPokemonStats;
+  types: IPokemonType[];
+  weight: number;
+}
+
+export interface IPokemonState {
+  next: string | null;
+  prev: string | null;
+  data: IPokemonData[];
+}
+
+export interface IPokemonStateProps {
+  PokemonData: IPokemonState;
+}
+export interface IPokemonDispatchProps {
+  loadPokemon: () => void;
+}

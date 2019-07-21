@@ -24,6 +24,7 @@ import {
   EvolutionInfo,
   EvolutionAttributes,
   Action,
+  StatsNote,
 } from './Detail.module.scss';
 
 const PokemonDetailComponent = () => (
@@ -131,6 +132,11 @@ const PokemonDetailComponent = () => (
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className={StatsNote}>
+              <em>
+                <small>* Percentage of stats is calculated based on total base stats.</small>
+              </em>
             </div>
           </section>
 

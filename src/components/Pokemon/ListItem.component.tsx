@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { IPokemonListItem } from '../../interfaces/pokemon/item';
+import { Link } from 'react-router-dom';
+import { IPokemonListItem } from '../../interfaces/components/pokemon/item';
 import { Wrapper, PokemonImage, PokemonID, PokemonName, PokemonTypes } from './ListItem.module.scss';
 
 const PokemonListItemComponent: React.FC<IPokemonListItem> = ({ pokemon }) => (
-  <a href="/" className={Wrapper}>
+  <Link to={`/detail/${pokemon.name}`} className={Wrapper}>
     <div className={PokemonImage}>
-      <img src={pokemon.image} alt={pokemon.name} />
+      <img src={pokemon.imageUrl} alt={pokemon.name} />
     </div>
-    <div className={PokemonID}>#{pokemon.id}</div>
+    <div className={PokemonID}>#{String(pokemon.id).padStart(3, '0')}</div>
     <div>
-      <h3 className={PokemonName}>{pokemon.name}</h3>
+      <h3 className={PokemonName}>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
       <div className={PokemonTypes}>
-        <span>Rock</span>
-        <span>Water</span>
+        {pokemon.types.map(row => (
+          <span key={row.name}>{row.name.charAt(0).toUpperCase() + row.name.slice(1)}</span>
+        ))}
       </div>
     </div>
-  </a>
+  </Link>
 );
 export default PokemonListItemComponent;

@@ -1,13 +1,57 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
 import { Footer, Header, SortPokemon, Pokemon } from '../components';
+import { IPokemonStateProps, IPokemonDispatchProps, IPokemonData } from '../interfaces/data/pokemon';
 
-class IndexPage extends React.Component {
-  public componentDidMount = () => {
+import { PokemonAction } from '../redux/actions';
+import { ThunkDispatch, ThunkAction } from 'redux-thunk';
+import { AnyAction } from 'redux';
+
+const mapStateToProps = ({ PokemonData }: IPokemonStateProps) => ({
+  data: PokemonData.data,
+  next: PokemonData.next,
+  prev: PokemonData.prev,
+});
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
+  loadPokemon: () => dispatch(PokemonAction.loadData()),
+  loadMorePokemon: (url: string | null) => dispatch(PokemonAction.loadNextData(url)),
+});
+
+interface IState {
+  isLoading: boolean;
+}
+interface IProps {
+  loadMorePokemon: (url: string | null) => ThunkAction<void, {}, {}, AnyAction>;
+  data: IPokemonData[];
+  next: string | null;
+  prev: string | null;
+}
+
+class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> {
+  public state = {
+    isLoading: false,
+  };
+
+  public componentDidMount = async () => {
     window.scrollTo(0, 0);
+
+    // Load pokemon
+    this.setState({ isLoading: true });
+    await this.props.loadPokemon();
+    this.setState({ isLoading: false });
+  };
+
+  public handleLoadNextData = async () => {
+    this.setState({ isLoading: true });
+    await this.props.loadMorePokemon(this.props.next);
+    // await this.props.loadPokemon();
+    this.setState({ isLoading: false });
   };
 
   public render = () => {
+    const { isLoading } = this.state;
+    const { data, next, prev } = this.props;
     return (
       <>
         <Header />
@@ -17,49 +61,12 @@ class IndexPage extends React.Component {
 
         {/* Pokemon Lists */}
         <Pokemon.List
-          data={[
-            {
-              id: 138,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/138.png',
-              name: 'Omanyte',
-            },
-            {
-              id: 139,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/139.png',
-              name: 'Omastar',
-            },
-            {
-              id: 140,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/140.png',
-              name: 'Kabuto',
-            },
-            {
-              id: 141,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/141.png',
-              name: 'Kabutops',
-            },
-            {
-              id: 79,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/079.png',
-              name: 'Slowpoke',
-            },
-            {
-              id: 80,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/080.png',
-              name: 'Slowbro',
-            },
-            {
-              id: 121,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/121.png',
-              name: 'Starmie',
-            },
-            {
-              id: 199,
-              image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/199.png',
-              name: 'Slowking',
-            },
-          ]}
+          data={data}
+          isLoading={isLoading}
+          isNext={next}
+          isPrev={prev}
           renderItem={({ item }) => <Pokemon.ListItem pokemon={item} />}
+          loadNextData={this.handleLoadNextData}
         />
 
         <Footer />
@@ -67,4 +74,7 @@ class IndexPage extends React.Component {
     );
   };
 }
-export default IndexPage;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(IndexPage);

@@ -287,6 +287,15 @@ Array [
                 </ul>
               </div>
             </div>
+            <div
+              className="StatsNote"
+            >
+              <em>
+                <small>
+                  * Percentage of stats is calculated based on total base stats.
+                </small>
+              </em>
+            </div>
           </section>
           <section>
             <div

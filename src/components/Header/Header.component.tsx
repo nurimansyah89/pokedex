@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, FieldProps } from 'formik';
 import { AdvanceSearch } from '../index';
-import { IHeaderProps } from '../../interfaces/header';
+import { IHeaderProps } from '../../interfaces/components/header';
 
 import Choices from 'choices.js';
 import 'choices.js/public/assets/styles/choices.min.css';

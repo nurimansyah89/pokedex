@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Wrapper, Title, Message, AltMessage } from './Alert.module.scss';
-import { IAlertProps } from '../../interfaces/alert';
+import { IAlertProps } from '../../interfaces/components/alert';
 
 const AlertComponent: React.FC<IAlertProps> = ({ title, message, altMessage }) => (
   <div className={Wrapper}>

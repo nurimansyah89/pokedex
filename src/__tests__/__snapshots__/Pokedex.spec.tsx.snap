@@ -183,6 +183,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#729f3f",
+                          "color": "white",
+                        }
+                      }
                     >
                       Bug
                     </div>
@@ -208,6 +214,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#53a4cf",
+                          "color": "white",
+                        }
+                      }
                     >
                       Dragon
                     </div>
@@ -233,6 +245,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#fdb9e9",
+                          "color": undefined,
+                        }
+                      }
                     >
                       Fairy
                     </div>
@@ -258,6 +276,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#fd7d24",
+                          "color": "white",
+                        }
+                      }
                     >
                       Fire
                     </div>
@@ -283,6 +307,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Ghost
                     </div>
@@ -308,6 +338,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Ground
                     </div>
@@ -333,6 +369,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Normal
                     </div>
@@ -358,6 +400,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Physic
                     </div>
@@ -383,6 +431,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Steel
                     </div>
@@ -408,6 +462,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Dark
                     </div>
@@ -433,6 +493,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Electric
                     </div>
@@ -458,6 +524,12 @@ Array [
                   >
                     <div
                       className="TypeName"
+                      style={
+                        Object {
+                          "background": "#7b62a3",
+                          "color": "white",
+                        }
+                      }
                     >
                       Fighting
                     </div>
@@ -660,348 +732,7 @@ Array [
   >
     <ul
       className="ListWrapper"
-    >
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Omanyte"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/138.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            138
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Omanyte
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Omastar"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/139.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            139
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Omastar
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Kabuto"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/140.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            140
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Kabuto
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Kabutops"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/141.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            141
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Kabutops
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Slowpoke"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/079.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            79
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Slowpoke
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Slowbro"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/080.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            80
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Slowbro
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Starmie"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/121.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            121
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Starmie
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          className="Wrapper"
-          href="/"
-        >
-          <div
-            className="PokemonImage"
-          >
-            <img
-              alt="Slowking"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/199.png"
-            />
-          </div>
-          <div
-            className="PokemonID"
-          >
-            #
-            199
-          </div>
-          <div>
-            <h3
-              className="PokemonName"
-            >
-              Slowking
-            </h3>
-            <div
-              className="PokemonTypes"
-            >
-              <span>
-                Rock
-              </span>
-              <span>
-                Water
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <div
-      className="Wrapper"
-    >
-      <div
-        className="Title"
-      >
-        No Pokémon Matched Your Search!
-      </div>
-      <p
-        className="Message"
-      >
-        Try these suggestions to find a Pokémon:
-      </p>
-      <ul
-        className="AltMessage"
-      >
-        <li>
-          Reduce the number of search parameters
-        </li>
-        <li>
-          Search for only one Pokémon type at a time
-        </li>
-        <li>
-          Try multiple body sizes and shapes
-        </li>
-      </ul>
-    </div>
-    <div
-      className="align-center Action"
-    >
-      <button
-        className="button button-blue"
-      >
-        Load More Pokemon
-      </button>
-    </div>
+    />
     <div
       className="align-center loader"
     >

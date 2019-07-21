@@ -14,6 +14,7 @@ export const Stats: string;
 export const StatsBar: string;
 export const StatsBar_Full: string;
 export const StatsTitle: string;
+export const StatsNote: string;
 export const Evolution: string;
 export const EvolutionImage: string;
 export const EvolutionInfo: string;
