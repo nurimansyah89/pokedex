@@ -37,4 +37,5 @@ export interface IPokemonStateProps {
 }
 export interface IPokemonDispatchProps {
   loadPokemon: () => void;
+  loadMorePokemon: (url: string | null) => ThunkAction<void, {}, {}, AnyAction>;
 }

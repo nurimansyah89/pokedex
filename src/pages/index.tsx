@@ -5,8 +5,7 @@ import { Footer, Header, SortPokemon, Pokemon } from '../components';
 import { IPokemonStateProps, IPokemonDispatchProps, IPokemonData } from '../interfaces/data/pokemon';
 
 import { PokemonAction } from '../redux/actions';
-import { ThunkDispatch, ThunkAction } from 'redux-thunk';
-import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 
 const mapStateToProps = ({ PokemonData }: IPokemonStateProps) => ({
   data: PokemonData.data,
@@ -22,7 +21,6 @@ interface IState {
   isLoading: boolean;
 }
 interface IProps {
-  loadMorePokemon: (url: string | null) => ThunkAction<void, {}, {}, AnyAction>;
   data: IPokemonData[];
   next: string | null;
   prev: string | null;
