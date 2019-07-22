@@ -8,8 +8,6 @@ export const FilterHeight: string;
 export const FilterWeight: string;
 export const FilterType: string;
 export const FilterBox: string;
-export const Range: string;
-export const RangeInput: string;
 export const Action: string;
 export const TypeList: string;
 export const TypeContainer: string;

@@ -85,591 +85,226 @@ Array [
     <div
       className="AdvanceSearchContainer"
     >
-      <div
-        className="container Wrapper"
+      <form
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
         <div
-          className="Selected"
-        >
-          <ul>
-            <li>
-              <span
-                className="SelectedType"
-              >
-                Type:
-              </span>
-              <span
-                className="SelectedValue"
-              >
-                2 Selected
-              </span>
-              <button
-                type="button"
-              >
-                <span
-                  className="fas fa-times"
-                />
-              </button>
-            </li>
-          </ul>
-        </div>
-        <button
-          className="ToggleButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Show Advance Search
-           
-          <span
-            className="fa-stack"
-          >
-            <i
-              className="fas fa-circle fa-stack-1x"
-            />
-            <i
-              className="fas fa-angle-down fa-stack-1x"
-            />
-          </span>
-        </button>
-        <div
-          className="ContentWrapper"
+          className="container Wrapper"
         >
           <div
-            className="Filter"
+            className="Selected"
           >
-            <section>
-              <div
-                className="FilterType"
-              >
-                <h2>
-                  Type & Weakness
-                </h2>
-                <span>
-                  <strong>
-                    T
-                  </strong>
-                   = Type
-                </span>
-                <span>
-                  <strong>
-                    W
-                  </strong>
-                   = Weakness
-                </span>
-              </div>
-              <ul
-                className="TypeList"
-              >
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#729f3f",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Bug
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#53a4cf",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Dragon
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#fdb9e9",
-                          "color": undefined,
-                        }
-                      }
-                    >
-                      Fairy
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#fd7d24",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Fire
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Ghost
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Ground
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Normal
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Physic
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Steel
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Dark
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Electric
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    className="TypeContainer"
-                  >
-                    <div
-                      className="TypeName"
-                      style={
-                        Object {
-                          "background": "#7b62a3",
-                          "color": "white",
-                        }
-                      }
-                    >
-                      Fighting
-                    </div>
-                    <div
-                      className="TypeAction"
-                    >
-                      <button
-                        type="button"
-                      >
-                        T
-                      </button>
-                      <button
-                        type="button"
-                      >
-                        W
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section>
-              <div
-                className="FilterAbility"
-              >
-                <h2>
-                  Ability
-                </h2>
+            <ul>
+              
+              
+              
+            </ul>
+          </div>
+          <button
+            className="ToggleButton"
+            onClick={[Function]}
+            type="button"
+          >
+            Show Advance Search
+             
+            <span
+              className="fa-stack"
+            >
+              <i
+                className="fas fa-circle fa-stack-1x"
+              />
+              <i
+                className="fas fa-angle-down fa-stack-1x"
+              />
+            </span>
+          </button>
+          <div
+            className="ContentWrapper"
+          >
+            <div
+              className="Filter"
+            >
+              <section>
                 <div
-                  className="dropdown dropdown__pokedrop"
+                  className="FilterType"
                 >
-                  <select
-                    id="ability"
-                    name=""
+                  <h2>
+                    Type & Weakness
+                  </h2>
+                  <span>
+                    <strong>
+                      T
+                    </strong>
+                     = Type
+                  </span>
+                  <span>
+                    <strong>
+                      W
+                    </strong>
+                     = Weakness
+                  </span>
+                </div>
+                <ul
+                  className="TypeList"
+                />
+              </section>
+              <section>
+                <div
+                  className="FilterAbility"
+                >
+                  <h2>
+                    Ability
+                  </h2>
+                  <div
+                    className="dropdown dropdown__pokedrop"
                   >
-                    <option
+                    <select
+                      id="ability"
+                      name="ability"
+                      onBlur={[Function]}
+                      onChange={[Function]}
                       value=""
                     >
-                      All
-                    </option>
-                  </select>
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="FilterHeight"
-              >
-                <h2>
-                  Height
-                </h2>
-                <ul>
-                  <li
-                    className="FilterBox HeightSmall"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                  <li
-                    className="FilterBox HeightMedium"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                  <li
-                    className="FilterBox HeightLarge"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                </ul>
-              </div>
-              <div
-                className="FilterWeight"
-              >
-                <h2>
-                  Weight
-                </h2>
-                <ul>
-                  <li
-                    className="FilterBox WeightSmall"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                  <li
-                    className="FilterBox WeightMedium"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                  <li
-                    className="FilterBox WeightLarge"
-                  >
-                    <button
-                      type="button"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </div>
-          <div
-            className="Range"
-          >
-            <h2>
-              Number Range
-            </h2>
+                <div
+                  className="FilterHeight"
+                >
+                  <h2>
+                    Height
+                  </h2>
+                  <ul>
+                    <li
+                      className="FilterBox HeightSmall"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="height"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="S"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                    <li
+                      className="FilterBox HeightMedium"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="height"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="M"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                    <li
+                      className="FilterBox HeightLarge"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="height"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="L"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className="FilterWeight"
+                >
+                  <h2>
+                    Weight
+                  </h2>
+                  <ul>
+                    <li
+                      className="FilterBox WeightSmall"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="weight"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="S"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                    <li
+                      className="FilterBox WeightMedium"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="weight"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="M"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                    <li
+                      className="FilterBox WeightLarge"
+                    >
+                      <label>
+                        <input
+                          checked={false}
+                          name="weight"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="radio"
+                          value="L"
+                        />
+                        <span />
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
             <div
-              className="RangeInput"
+              className="Action"
             >
               <input
-                className="input"
-                id=""
-                max="1000"
-                min="1"
-                name=""
-                placeholder="1"
-                type="number"
+                className="button button-gray"
+                type="reset"
+                value="Reset"
               />
-              <span>
-                -
-              </span>
-              <input
-                className="input"
-                id=""
-                max="1000"
-                min="1"
-                name=""
-                placeholder="1000"
-                type="number"
-              />
+              <button
+                className="button button-orange"
+                type="submit"
+              >
+                <span
+                  className="fas fa-search"
+                />
+                 Search
+              </button>
             </div>
           </div>
-          <div
-            className="Action"
-          >
-            <input
-              className="button button-gray"
-              type="reset"
-              value="Reset"
-            />
-            <button
-              className="button button-orange"
-              type="submit"
-            >
-              <span
-                className="fas fa-search"
-              />
-               Search
-            </button>
-          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>,
   <div

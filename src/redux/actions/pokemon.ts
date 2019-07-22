@@ -1,9 +1,31 @@
 import { ThunkDispatch, ThunkAction } from 'redux-thunk';
-import { POKEMON_FETCH, POKEMON_FETCH_MORE, POKEMON_SEARCH } from '../constants';
+import { POKEMON_FETCH, POKEMON_FETCH_MORE, POKEMON_SEARCH, POKEMON_SORT_FETCH } from '../constants';
 import { AnyAction } from 'redux';
 import { pokemonConfig } from '../../config';
 import { IPokemonData, IPokemonAbility } from '../../interfaces/data/pokemon';
 import { IPokemonType } from '../../interfaces/data/pokedex/type';
+
+export const filterPokemon = (values: any): ThunkAction<void, {}, {}, AnyAction> => async (
+  dispatch: ThunkDispatch<{}, {}, AnyAction>,
+) => {
+  try {
+    if (
+      values.type.length === 0 &&
+      values.weakness.length === 0 &&
+      values.ability === '' &&
+      values.height === '' &&
+      values.weight === '' &&
+      values.range.min === 1 &&
+      values.range.max === parseInt(String(pokemonConfig.totalPokemons), 10)
+    ) {
+      dispatch(loadData());
+    } else {
+      dispatch({ type: POKEMON_SORT_FETCH, filter: values });
+    }
+  } catch (e) {
+    dispatch({ type: POKEMON_FETCH, data: [], next: null, prev: null });
+  }
+};
 
 export const searchPokemon = (query: string): ThunkAction<void, {}, {}, AnyAction> => async (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
@@ -36,6 +58,7 @@ export const searchPokemon = (query: string): ThunkAction<void, {}, {}, AnyActio
         const abilityResponse = await fetch(abilityRow.ability.url);
         const abilityData = await abilityResponse.json();
         return {
+          id: abilityData.id,
           name: abilityData.name,
           description: abilityData.flavor_text_entries.find(
             (findAbility: { language: { name: string } }) => findAbility.language.name === 'en',
@@ -47,6 +70,7 @@ export const searchPokemon = (query: string): ThunkAction<void, {}, {}, AnyActio
 
     // Get pokemon types
     const types = pokemonDetail.types.map(typeData => ({
+      id: typeData.id,
       name: typeData.type.name,
       slot: typeData.slot,
     }));
@@ -73,7 +97,7 @@ export const searchPokemon = (query: string): ThunkAction<void, {}, {}, AnyActio
 
     dispatch({ type: POKEMON_SEARCH, data });
   } catch (e) {
-    throw e;
+    dispatch({ type: POKEMON_SEARCH, data: [] });
   }
 };
 
@@ -110,6 +134,7 @@ const processData: (
           const abilityResponse = await fetch(abilityRow.ability.url);
           const abilityData = await abilityResponse.json();
           return {
+            id: abilityData.id,
             name: abilityData.name,
             description: abilityData.flavor_text_entries.find(
               (findAbility: { language: { name: string } }) => findAbility.language.name === 'en',
@@ -120,10 +145,19 @@ const processData: (
       );
 
       // Get pokemon types
-      const types = pokemonDetail.types.map(typeData => ({
-        name: typeData.type.name,
-        slot: typeData.slot,
-      }));
+      const types = await Promise.all(
+        pokemonDetail.types.map(async typeData => {
+          const typeResponse = await fetch(typeData.type.url);
+          const typeJson = await typeResponse.json();
+
+          return {
+            id: typeData.id,
+            name: typeData.type.name,
+            slot: typeData.slot,
+            weakness: typeJson.damage_relations.double_damage_from.map((typeRow: { name: string }) => typeRow.name),
+          };
+        }),
+      );
 
       const pokemon: IPokemonData = {
         id: pokemonDetail.id,

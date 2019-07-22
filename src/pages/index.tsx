@@ -6,7 +6,7 @@ import { IPokemonStateProps, IPokemonDispatchProps, IPokemonData } from '../inte
 
 import { PokemonAction } from '../redux/actions';
 import { ThunkDispatch } from 'redux-thunk';
-import { searchPokemon } from '../redux/actions/pokemon';
+import { searchPokemon, filterPokemon } from '../redux/actions/pokemon';
 
 const mapStateToProps = ({ PokemonData }: IPokemonStateProps) => ({
   data: PokemonData.data,
@@ -17,11 +17,13 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
   loadPokemon: () => dispatch(PokemonAction.loadData()),
   loadMorePokemon: (url: string | null) => dispatch(PokemonAction.loadNextData(url)),
   search: (query: string) => dispatch(searchPokemon(query)),
+  filterPokemon: (values?: any) => dispatch(filterPokemon(values)),
 });
 
 interface IState {
   isLoading: boolean;
   isSearch: boolean;
+  sortValues: any;
 }
 interface IProps {
   data: IPokemonData[];
@@ -33,6 +35,7 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
   public state = {
     isLoading: false,
     isSearch: false,
+    sortValues: {},
   };
 
   public componentDidMount = async () => {
@@ -56,13 +59,19 @@ class IndexPage extends React.Component<IProps & IPokemonDispatchProps, IState> 
     this.setState({ isLoading: false, isSearch: false });
   };
 
+  public handleFilter = async (values: any) => {
+    this.setState({ isLoading: true, isSearch: true, sortValues: values });
+    await this.props.filterPokemon(values);
+    this.setState({ isLoading: false, isSearch: false });
+  };
+
   public render = () => {
     const { isLoading, isSearch } = this.state;
     const { data, next, prev } = this.props;
 
     return (
       <>
-        <Header handleSearch={this.handleSearch} />
+        <Header handleSearch={this.handleSearch} handleFilter={this.handleFilter} />
 
         {/* Sort */}
         <SortPokemon />

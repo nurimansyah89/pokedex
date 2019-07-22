@@ -5,7 +5,7 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 
-describe('Advance Search Test:', () => {
+describe('Sort Pokemon Test:', () => {
   const mockStore = configureStore();
   let root: HTMLDivElement;
   let store: Store<any>;

@@ -45,7 +45,7 @@ class HeaderComponent extends React.PureComponent<IHeaderProps> {
   };
 
   public render = () => {
-    const { noFilter } = this.props;
+    const { noFilter, handleFilter } = this.props;
     return (
       <div className={classNames(Wrapper, noFilter && WrapperNoFilter)}>
         <div className="container">
@@ -77,7 +77,7 @@ class HeaderComponent extends React.PureComponent<IHeaderProps> {
             </div>
 
             <div className={AdvanceSearchContainer}>
-              <AdvanceSearch />
+              <AdvanceSearch handleFilter={handleFilter} />
             </div>
           </>
         )}

@@ -1,8 +1,8 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-$mobileHeight: 1250px;
-$desktopHeight: 650px;
+$mobileHeight: 1540px;
+$desktopHeight: 670px;
 
 .Wrapper {
   position: relative;
@@ -74,7 +74,21 @@ $desktopHeight: 650px;
   }
 
   &Box {
-    button {
+    input[type='radio'] {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      position: absolute;
+
+      &:checked {
+        & + span {
+          background: $color-gray;
+          color: white;
+        }
+      }
+    }
+    span {
       display: block;
       background: $color-box;
       border-radius: 5px;
@@ -85,12 +99,6 @@ $desktopHeight: 650px;
       color: $color-gray;
       font-size: 48px;
       transition: all ease 0.15s;
-
-      &:hover,
-      &:focus {
-        background: $color-gray;
-        color: white;
-      }
 
       @include bp(desktop) {
         padding: 1rem 1.5rem;
@@ -141,7 +149,7 @@ $desktopHeight: 650px;
   &Small,
   &Medium,
   &Large {
-    button {
+    span {
       &::before {
         display: block;
       }
@@ -149,21 +157,21 @@ $desktopHeight: 650px;
   }
 
   &Small {
-    button {
+    span {
       &:before {
         content: '\f118';
       }
     }
   }
   &Medium {
-    button {
+    span {
       &:before {
         content: '\f117';
       }
     }
   }
   &Large {
-    button {
+    span {
       &:before {
         content: '\f116';
       }
@@ -174,7 +182,7 @@ $desktopHeight: 650px;
   &Small,
   &Medium,
   &Large {
-    button {
+    span {
       &::before {
         display: block;
       }
@@ -182,42 +190,23 @@ $desktopHeight: 650px;
   }
 
   &Small {
-    button {
+    span {
       &:before {
         content: '\f11b';
       }
     }
   }
   &Medium {
-    button {
+    span {
       &:before {
         content: '\f11a';
       }
     }
   }
   &Large {
-    button {
+    span {
       &:before {
         content: '\f119';
-      }
-    }
-  }
-}
-.Range {
-  &Input {
-    display: flex;
-    align-items: center;
-
-    > * {
-      &:nth-child(2) {
-        padding: 0 0.5rem;
-      }
-    }
-
-    @include bp(desktop) {
-      input:nth-child(1),
-      input:nth-child(3) {
-        width: 100px;
       }
     }
   }
@@ -286,34 +275,53 @@ $desktopHeight: 650px;
     margin-top: 0.5rem;
     text-align: center;
 
-    button {
-      background: $color-gray;
-      border: none;
-      border-radius: 24px;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      color: white;
-      transition: all ease 0.15s;
-      font-weight: bold;
-      outline: 0;
+    > label {
+      display: inline-block;
+      font-size: 1rem;
 
-      &:hover,
-      &:focus {
-        background-color: $color-green;
+      > input[type='checkbox'] {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
       }
 
-      & + button {
-        margin-left: 0.25rem;
+      > span {
+        background: $color-gray;
+        border: none;
+        border-radius: 24px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        cursor: pointer;
+        color: white;
+        transition: all ease 0.15s;
+        font-weight: bold;
+        outline: 0;
+        display: inline-block;
+        text-align: center;
 
-        &:hover,
-        &:focus {
-          background-color: $color-red;
+        @include bp(desktop) {
+          margin-left: 0.5rem;
         }
       }
 
-      @include bp(desktop) {
-        margin-left: 1rem;
+      &:nth-child(1) {
+        > input[type='checkbox'] {
+          &:checked {
+            & + span {
+              background-color: $color-green;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        > input[type='checkbox'] {
+          &:checked {
+            & + span {
+              background-color: $color-red;
+            }
+          }
+        }
       }
     }
 
@@ -338,6 +346,7 @@ $desktopHeight: 650px;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       font-size: 0.9rem;
+      margin-right: 0.5rem;
 
       button {
         margin-left: 0.5rem;
