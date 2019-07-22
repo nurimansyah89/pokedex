@@ -36,7 +36,7 @@ const PokemonListComponent: React.FC<IPokemonList> = ({
     {!isLoading && isNext && data.length > 1 && (
       <div className={classNames('align-center', Action)}>
         <button className="button button-blue" type="button" onClick={loadNextData}>
-          Load More Pokemon
+          Load More Pokémon
         </button>
       </div>
     )}

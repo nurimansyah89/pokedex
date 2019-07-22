@@ -25,12 +25,17 @@ export interface IPokemonData {
   stats: IPokemonStats;
   types: IPokemonType[];
   weight: number;
+  description?: string;
+  category?: string;
+  nextPokemon?: any;
+  prevPokemon?: any;
 }
 
 export interface IPokemonState {
   next: string | null;
   prev: string | null;
   data: IPokemonData[];
+  selectedData: IPokemonData | null;
   tempData: IPokemonData[];
 }
 

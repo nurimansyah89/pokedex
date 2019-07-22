@@ -6,7 +6,7 @@ import DetailPage from '../../pages/detail';
 describe('Detail Page', () => {
   const originitalScrollTo = window.scrollTo;
 
-  it('Should Render detail page without crash', async () => {
+  it.skip('Should Render detail page without crash', async () => {
     window.scrollTo = () => null;
     const tree = renderer
       .create(

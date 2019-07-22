@@ -10,6 +10,7 @@ export const PokemonAttributes: string;
 export const PokemonAdditional: string;
 export const PokemonEvolution: string;
 export const AttributeDetail: string;
+export const AttributeDetail__Opened: string;
 export const Stats: string;
 export const StatsBar: string;
 export const StatsBar_Full: string;

@@ -9,6 +9,7 @@ import {
   POKEMON_SORT_BY_Z_A,
   POKEMON_SEARCH,
   POKEMON_SORT_FETCH,
+  POKEMON_GET,
 } from '../constants';
 
 const PokemonData = (
@@ -16,11 +17,42 @@ const PokemonData = (
     next: null,
     prev: null,
     data: [],
+    selectedData: {
+      abilities: [],
+      height: 0,
+      id: 0,
+      imageUrl: '',
+      name: '',
+      stats: {
+        attack: 0,
+        defense: 0,
+        hp: 0,
+        specialAttack: 0,
+        specialDefense: 0,
+        speed: 0,
+      },
+      types: [],
+      weight: 0,
+    },
     tempData: [],
   },
-  action: { type: string; data: any[]; next: string; prev: string; filter?: any },
-) => {
+  action: {
+    type: string;
+    data: IPokemonData[];
+    next: string;
+    prev: string;
+    filter?: any;
+    name: string;
+    selectedData: IPokemonData;
+  },
+): IPokemonState => {
   switch (action.type) {
+    case POKEMON_GET:
+      const selectedData = action.selectedData;
+      return {
+        ...state,
+        selectedData,
+      };
     case POKEMON_SORT_FETCH:
       let data: IPokemonData[] = Object.assign([], state.tempData);
 
@@ -105,8 +137,8 @@ const PokemonData = (
     case POKEMON_FETCH:
       return {
         ...state,
-        data: action.data.sort((a, b) => a.id - b.id),
-        tempData: action.data.sort((a, b) => a.id - b.id),
+        data: action.data.sort((a: any, b: any) => a.id - b.id),
+        tempData: action.data.sort((a: any, b: any) => a.id - b.id),
         next: action.next,
         prev: action.prev,
       };

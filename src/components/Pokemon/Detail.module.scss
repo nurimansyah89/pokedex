@@ -6,6 +6,7 @@
   margin-top: -2rem;
 
   &Container {
+    min-height: 480px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: white;
@@ -92,6 +93,11 @@
         div {
           font-size: 0.9rem;
           letter-spacing: 0.5px;
+
+          @include bp(desktop) {
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+          }
         }
 
         button {
@@ -166,7 +172,7 @@
   &Evolution {
     margin-top: 2rem;
     background: lighten($color-gray, 5%);
-    border-radius: 4px;
+    border-radius: 10px;
     color: white;
     padding: 1rem;
 
@@ -218,6 +224,10 @@
   p {
     letter-spacing: 0.5px;
     line-height: 1.5;
+  }
+
+  &__Opened {
+    display: block;
   }
 }
 
